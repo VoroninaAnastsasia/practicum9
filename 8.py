@@ -6,20 +6,20 @@ def main():
         days_in_month = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]
         
         monthly_averages = []
-        index = 0
+        с = 0
         
         for month_days in days_in_month:
-            month_sum = sum(steps[index:index + month_days])
+            month_sum = sum(steps[с:с + month_days])
             month_average = month_sum / month_days
             monthly_averages.append(month_average)
-            index += month_days
+            с += month_days
         
         with open('output.txt', 'w', encoding='utf-8') as output_file:
             for average in monthly_averages:
                 output_file.write(f"{average}\n")
         
     except FileNotFoundError:
-        print("Файл не найден")
+        print('Файл не найден')
 
 if __name__ == "__main__":
     main()
