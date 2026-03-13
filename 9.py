@@ -1,11 +1,22 @@
 import os
 
-os.makedirs('simple', exist_ok=True)
-
-with open('input.txt', 'r', encoding='utf-8') as f:
-    lines = f.readlines()
+def main():
+    os.makedirs('simple', exist_ok=True)
     
-lines2 = [lines[i] for i in range(1, len(lines), 2)]
+    file_read = open('input.txt', 'r', encoding='utf-8')
+    all_lines = file_read.readlines()
+    file_read.close()
+    
+    even_lines = []
+    
+    i = 1 
+    while i < len(all_lines):
+        even_lines.append(all_lines[i])
+        i = i + 2
+    with open('simple/output.txt', 'w', encoding='utf-8') as file_write:
+        for line in even_lines:
+            file_write.write(line)
 
-with open('simple/output.txt', 'w', encoding='utf-8') as f:
-    f.writelines(lines2)
+if __name__ == "__main__":
+    main()
+    
