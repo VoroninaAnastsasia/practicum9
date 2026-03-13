@@ -4,7 +4,7 @@ def main():
             numbers = input_file.read().split()
         
         if len(numbers) != 3:
-            raise ValueError(f"Ожидалось 3 числа, получено {len(numbers)}")
+            raise ValueError
 
         a, b, c = map(int, numbers)
 
@@ -14,11 +14,11 @@ def main():
             output_file.write(str(result))
             
     except FileNotFoundError:
-        print("Ошибка: Файл input.txt не найден")
+        print('Файл не найден')
     except ValueError:
-        print("data error")
+        print('data error')
     except ZeroDivisionError:
-        print("division by 0")
+        print('division by 0')
 
 if __name__ == "__main__":
     main()
