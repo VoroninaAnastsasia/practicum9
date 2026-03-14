@@ -1,4 +1,7 @@
 def main():
+    """The function adds to the output.txt file only
+    those files that are longer than 20"""
+    
     try:
         with open('input.txt', 'r', encoding='utf-8') as input_file:
             all_lines = input_file.readlines()
